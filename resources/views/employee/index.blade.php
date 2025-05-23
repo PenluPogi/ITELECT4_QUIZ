@@ -58,7 +58,7 @@
                                 </td>
                                 <td> 
                                     
-                                <span class="badge bg-danger"><a href="{{  route('employee.delete')}}" class="m-3 p-lg-5"><h5>Delete</h5></a></span>
+                                <span class="badge bg-danger"><a href="{{  route('employee.Destroy')}}" class="m-3 p-lg-5"><h5>Delete</h5></a></span>
                                 </td> --}}
                                 
                             </tr>
