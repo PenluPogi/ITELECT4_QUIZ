@@ -16,7 +16,7 @@
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-        <a href="{{ route('employee.create') }}" class="btn btn-info">Add New Employee</a>
+        <a href="{{ route('employe.create') }}" class="btn btn-info">Add New Employee</a>
         <div class="row">
 
        
@@ -43,16 +43,16 @@
                         </thead>
 
                         <tbody  >
-                            @foreach ($employees)
+                            @foreach ($employees as $items)
                             <tr>
                                 
-                                <td class="">{{$items}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td>
-                                <td>{{$items}}</td>
+                                <td class="">{{$items->id}}</td>
+                                <td>{{$items->fname}}</td>
+                                <td>{{$items->lname}}</td>
+                                <td>{{$items->midname}}</td>
+                                <td>{{$items->age}}</td>
+                                <td>{{$items->address}}</td>
+                                <td>{{$items->zip}}</td>
                                 {{-- <td> 
                                     <span class="badge bg-success"><a href="{{  route('employee.edit')}}" class="btn btn-success mx-3  "><h5>Edit</h5></a></span>
                                 </td>
