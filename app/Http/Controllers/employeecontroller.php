@@ -10,8 +10,8 @@ class employeecontroller extends Controller
 {
     public function index()
     {   
-
-        return view ('employee.index');
+        $employees = employee::get();
+        return view('employee.index',compact('employees'));
     }
 
     public function create()
@@ -32,14 +32,14 @@ class employeecontroller extends Controller
         
     ]);
 
-    ::create($request->all());
+    employee::create($request->all());
     return view ('employee.create');
     }
 
     public function edit( int $id)
     {
-        $employees = ::find($id);
-        return view ('employee.edit');
+        $employees=employee::find($id);
+        return view ('employee.edit',compact('employees'));
     }
 
     public function update(Request $request, int $id) {
@@ -54,9 +54,10 @@ class employeecontroller extends Controller
                 
             ]);
         
-            employee::findOrFail($id)->($request->all());
+
+            employee::findOrFail($id)->update($request->all());
             return redirect ()->back()->with('status','Employee Updated Successfully!');
-            }
+        }
     }
 
     public function Destroy (int $id){
@@ -64,4 +65,6 @@ class employeecontroller extends Controller
         $employees->delete();
         return redirect ()->back()->with('status','Employee Deleted');
     }
+
+    
 }
