@@ -33,7 +33,7 @@
                 <a href="{{ route('employee.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-users"></i>
                     <p>
-                        {{ __('Users') }}
+                        {{ __('Employee Managemenent') }}
                     </p>
                 </a>
             </li>
